@@ -18,7 +18,7 @@ export default function SearchBar({
     try {
       setLoading(true);
       const res = await fetch(
-        `http://www.omdbapi.com/?&t=${inputValue}&y=${yearInput}&plot=${plotValue}&apikey=${API_KEY}`,
+        `https://www.omdbapi.com/?&t=${inputValue}&y=${yearInput}&plot=${plotValue}&apikey=${API_KEY}`,
       );
       const jsonData = await res.json();
       await setMovie(jsonData);
@@ -29,7 +29,6 @@ export default function SearchBar({
       setLoading(false);
     }
   };
-  console.log(movie);
 
   const inputOnChange = e => {
     setInputValue(e.target.value);
